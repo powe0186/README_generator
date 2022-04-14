@@ -8,7 +8,6 @@ const generateMarkdown = require('./utils/generateMarkDown.js');
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    //const {name, description, instalation, usage, contributors, licenses, tests, email, gitHub} = data;
     const fileContents = generateMarkdown(data);
     fs.writeFile(fileName, fileContents, (err) => {
         if (err) {
@@ -19,6 +18,7 @@ function writeToFile(fileName, data) {
     });
 
 }
+
 
 // TODO: Create a function to initialize app
 function init() {
@@ -34,8 +34,10 @@ function init() {
     .catch((error) => {
         if (error.isTtyError) {
         // Prompt couldn't be rendered in the current environment
+        console.log("File could not be rendered.");
         } else {
         // Something else went wrong
+        console.log(error);
     }
   });
 

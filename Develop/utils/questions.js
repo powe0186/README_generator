@@ -26,9 +26,10 @@ const questions = [
         message: 'list all contributors and their githubs, separaged by commas.\n Example: John Wooden, JWooden2, Michael Jordan, MJ23'
     },
     {
-        type: 'input',
-        name: 'licenses',
-        message: 'List any licenses used, separated by commas.'
+        type: 'list',
+        name: 'license',
+        message: 'What license would you like to use?',
+        choices: ['MIT', 'Apache 2.0', 'Gnu v3.0', 'BSD', ]
     },
     {
         type: 'input',
