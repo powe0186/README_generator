@@ -7,7 +7,22 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  return `https://choosealicense.com/licenses/${license}/`
+  let suff;
+  switch(license) {
+    case 'MIT':
+      suff = 'mit';
+      break;
+    case 'Apache 2.0':
+      suff = 'apache-2.0';
+      break;
+    case 'Gnu v3.0':
+      suff = 'agpl-3.0';
+      break;
+    case 'BSL':
+      suff = 'bsl-1.0';
+      break;
+  }
+  return `https://choosealicense.com/licenses/${suff}/`
 }
 
 // TODO: Create a function that returns the license section of README
@@ -32,7 +47,7 @@ function renderLicenseSection(license) {
     notices must be preserved. Contributors provide an express grant of patent rights.
     When a modified version is used to provide a service over a network, the complete 
     source code of the modified version must be made available.`
-  } else if (license === 'BSD'){
+  } else if (license === 'BSL'){
     return `Boost Software License 1.0
     A simple permissive license only requiring preservation of copyright and license
     notices for source (and not binary) distribution. Licensed works, modifications, 
@@ -81,6 +96,8 @@ ${contributors}
 ## License
 
 ${renderLicenseSection(license)}
+
+[CLICK FOR MORE ABOUT LICENSE](${renderLicenseLink(license)})
 
 ## Tests
 
