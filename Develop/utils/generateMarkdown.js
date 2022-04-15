@@ -12,10 +12,10 @@ function renderLicenseLink(license) {
     case 'MIT':
       suff = 'mit';
       break;
-    case 'Apache 2.0':
+    case 'Apache2.0':
       suff = 'apache-2.0';
       break;
-    case 'Gnu v3.0':
+    case 'Gnuv3.0':
       suff = 'agpl-3.0';
       break;
     case 'BSL':
@@ -34,13 +34,13 @@ function renderLicenseSection(license) {
     A short and simple permissive license with conditions only requiring preservation
     of copyright and license notices. Licensed works, modifications, and larger works
     may be distributed under different terms and without source code.`
-  } else if (license === 'Apache 2.0') {
+  } else if (license === 'Apache2.0') {
     return `Apache License 2.0
     A permissive license whose main conditions require preservation of copyright and 
     license notices. Contributors provide an express grant of patent rights. Licensed 
     works, modifications, and larger works may be distributed under different terms 
     and without source code.`
-  } else if (license === 'Gnu v3.0'){
+  } else if (license === 'Gnuv3.0'){
     return `Permissions of this strongest copyleft license are conditioned on making 
     available complete source code of licensed works and modifications, which include
     larger works using a licensed work, under the same license. Copyright and license
@@ -108,6 +108,8 @@ ${usage}
 ${generateContributorGithubs(contributors)}
 
 ## License
+
+### ${license}\n
 
 ${renderLicenseSection(license)}
 
