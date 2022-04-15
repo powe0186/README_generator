@@ -2,7 +2,7 @@
 const questions = [
     {
         type: 'input',
-        name: 'projectName',
+        name: 'title',
         message: 'What is the name of your project?'
     },
     {
@@ -12,7 +12,7 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'instalation',
+        name: 'installation',
         message: 'What steps are required for instalation?'
     },
     {
@@ -23,7 +23,7 @@ const questions = [
     {
         type: 'input',
         name: 'contributors',
-        message: 'list all contributors and their githubs, separaged by commas.\n Example: John Wooden, JWooden2, Michael Jordan, MJ23'
+        message: "list all contributors' gitHubs.\n Example: JWooden2, MJ23, StephCur30"
     },
     {
         type: 'list',

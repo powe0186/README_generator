@@ -57,11 +57,25 @@ function renderLicenseSection(license) {
   }
 }
 
+function generateContributorGithubs(contributors) {
+  let conArray = contributors.split(',');
+  let trimArray = [];
+  for(id of conArray) {
+    trimArray.push(id.trim());
+  }
+  let conMarkdown = ``;
+  for (id of trimArray) {
+    conMarkdown += `- [${id}](https://github.com/${id})\n`
+  }
+  return conMarkdown;
+}
+
+
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  const {title, description, installation, usage, contributors, license, tests, email } = data;
+  const {title, description, installation, usage, contributors, license, tests, email, gitHub } = data;
   return `
-  # <${title}>
+  # ${title}
 
 ## Badges
 
@@ -91,7 +105,7 @@ ${usage}
 
 ## Credits
 
-${contributors}
+${generateContributorGithubs(contributors)}
 
 ## License
 
@@ -102,6 +116,12 @@ ${renderLicenseSection(license)}
 ## Tests
 
 ${tests}
+
+## My Github & Email
+
+- [https://github.com/${gitHub}](https://github.com/${gitHub})
+- [${email}](mailto:${email})
+
 `;
 }
 

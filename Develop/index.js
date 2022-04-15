@@ -26,7 +26,6 @@ function init() {
     inquirer
     .prompt(questions)
     .then((answers) => {
-        console.log(answers);
         
         writeToFile('YOURREADME.md', answers);
         
